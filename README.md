@@ -1,5 +1,27 @@
 # Projecte de Resum Automàtic amb IA
 
+## Índex
+1. [Definicions Bàsiques](#definicions-bàsiques)
+   - [IA Generativa](#ia-generativa)
+   - [Model](#model)
+   - [Dataset](#dataset)
+   - [Entrenar una IA](#entrenar-una-ia)
+   - [Fer Inferència d'una IA](#fer-inferència-duna-ia)
+   - [RAG](#rag-retrieval-augmented-generation)
+   - [Fine-tuning](#fine-tuning)
+2. [Aspectes de Programació](#aspectes-de-programació)
+   - [Llibreries Python Utilitzades](#llibreries-python-utilitzades)
+   - [Paràmetres del Model](#paràmetres-del-model)
+   - [Diagrama de Flux](#diagrama-de-flux)
+   - [Model Local vs API](#model-local-vs-api)
+   - [Recursos Hardware Utilitzats](#recursos-hardware-utilitzats)
+3. [Possibilitats i Limitacions](#possibilitats-i-limitacions)
+   - [Limitacions del Model BART-CNN](#limitacions-del-model-bart-cnn)
+   - [Aplicacions Pràctiques](#aplicacions-pràctiques)
+4. [Conclusions](#conclusions)
+5. [Referències](#referències)
+6. [Ús de la IA en el Desenvolupament](#ús-de-la-ia-en-el-desenvolupament)
+
 ## Definicions Bàsiques
 
 ### IA Generativa
