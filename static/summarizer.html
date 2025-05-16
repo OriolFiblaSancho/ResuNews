@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen de Noticia</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>ResumNews</h2>    <div class="input-group">
+      <input type="text" id="urlInput" placeholder="Introduce la URL de la noticia que deseas resumir">
+      <button onclick="resumir()" id="resumeButton">Resumir</button>
+    </div>
+    <div id="loading" class="loading-container">
+      <div class="spinner"></div>
+      <p>Procesando noticia...</p>
+    </div>
+    <h3>Resumen:</h3>
+    <textarea id="output" readonly></textarea>
+  </div>
+  <script>
+    async function resumir() {
+      const loading = document.getElementById('loading');
+      const button = document.getElementById('resumeButton');
+      const output = document.getElementById('output');
+      const url = document.getElementById("urlInput").value;
+
+      if (!url) {
+        output.value = "Por favor, introduce una URL válida";
+        return;
+      }
+
+      try {
+        // Mostrar animación de carga y deshabilitar botón
+        loading.classList.add('show');
+        button.disabled = true;
+        output.value = "";
+
+        const response = await fetch("http://localhost:8000/resumir", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: url })
+        });
+        const data = await response.json();
+        output.value = data.resumen;
+      } catch (error) {
+        output.value = "Error al procesar la noticia. Por favor, intenta con otra URL.";
+      } finally {
+        // Ocultar animación de carga y habilitar botón
+        loading.classList.remove('show');
+        button.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>

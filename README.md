@@ -1,0 +1,1 @@
+Proxim dia posarme a fer lo readme
