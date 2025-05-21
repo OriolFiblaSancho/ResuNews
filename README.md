@@ -19,8 +19,8 @@ Aplicació per a resumir noticies en base a una url amb el model bart-large-cnn 
 - **max_length**: Longitud màxima (en tokens) del resum generat. En el nostre cas està configurat a 500 per obtenir resums detallats però concisos.
 - **min_length**: Longitud mínima del resum. Establert a 100 per assegurar que el resum tingui prou contingut.
 - **temperature**: Controla la creativitat/aleatorietat en la generació del text.
-- **top_p**: Paràmetre de nucleus sampling que controla la diversitat del text generat.
-- **top_k**: Similar al top_p, limita les opcions de tokens a considerar.
+- **top_p**: Paràmetre de nucleus sampling que controla la diversitat del text generat, practicament com la temperatura.   
+- **top_k**: Fa referència als tokens de resposta més probables, per exemple un top_k:50 fara que el model utilitze sols els 50 tokens més probables.
 
 ### FlowChart:
 ```mermaid
