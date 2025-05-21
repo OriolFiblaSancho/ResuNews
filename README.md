@@ -2,6 +2,23 @@
 
 Aplicació per a resumir noticies en base a una url amb el model bart-large-cnn de Meta
 
+## Índex
+1. [Com s'utilitza](#com-sutilitza)
+2. [Aspectes de programació](#aspectes-de-programació)
+   - [Llibreries utilitzades](#llibreries-utilitzades)
+   - [Paràmetres del model](#paràmetres-del-model)
+   - [FlowChart](#flowchart)
+   - [Usar un model en local o una API](#usar-un-model-en-local-o-una-api)
+   - [Recursos utilitzats](#recursos-utilitzats)
+3. [Proves realitzades](#proves-realitzades)
+   - [Max i Min Lenght](#max-i-min-lenght)
+4. [Refinar el model](#refinar-el-model)
+5. [Limitacions del model](#limitacions-del-model)
+6. [Aplicacions practiques](#aplicacions-practiques)
+7. [Conclusion](#conclusion)
+8. [Webgrafia](#webgrafia)
+9. [Us de la IA en el projecte](#us-de-la-ia-en-el-projecte)
+
 ## Com s'utilitza
 1. pip install -r requirements.txt
 2. python.exe .\main.py
@@ -68,3 +85,42 @@ Com he dit anteriorment els parametres de temperatura, top k i top p no son util
 
 - Parametre petit(100, 56)
 ![alt text](readme_images/lenghtSmall.png)
+
+## Refinar el model
+Aquest model no utilitza cap tipus de prompt per a funcionar, per tant no podem refinarlo per a donarnos respostes mes concises i reals.
+
+## Limitacions del model
+1. **Longitud del text d'entrada**: El model sols pot processar els primers 1024 tokens del text d'entrada, per tant si la notícia és molt llarga, es perdran parts del contingut.
+
+2. **Recursos computacionals**: Com s'ha mencionat anteriorment, el model requereix uns 2GB de RAM i utilitza la CPU, el que pot fer que el procés sigui més lent en màquines amb recursos limitats.
+
+3. **Dependència de la qualitat del text**: El model depèn de la capacitat de la llibreria Newspaper3k per extreure correctament el text de la notícia. Si la pàgina web té una estructura inusual o el contingut no està ben formatat, pot fallar l'extracció.
+
+4. **Idioma**: El model BART-large-CNN està entrenat principalment amb textos en anglès, per tant pot no funcionar òptimament amb textos en altres idiomes.
+
+5. **No refinable**: Com s'ha mencionat anteriorment, al no utilitzar prompts, no es pot refinar o ajustar el comportament del model per a casos específics.
+
+## Aplicacions practiques
+Clarament la aplicació que te aquest projecte es el de resumir noticies per a gent que no te temps per a llegir ho tot, es podria implementar amb un lector en veu que llegeixque lo noticiare resumit per exemple cada mati al despertarse l'usuari.
+
+## Conclusion
+En aquest projecte he apres a utilitzar diferents models de IA en local amb els seus parametres i ha programar aplicacions en base a aquestos models. Vaig començar utilizant un model de GPT per a fer un expert en formatges, pero vaig voler buscar una aplicació que tinguesa una aplicació practica mes util. Al final he acabat tenint aquest resumidor de noticies que pot tenir aplicacions realment utils.
+
+## Webgrafia
+1. **Hugging Face - BART-large-CNN**: Documentació oficial del model utilitzat
+   - https://huggingface.co/facebook/bart-large-cnn
+
+2. **FastAPI Documentation**: Documentació oficial per a la implementació del servidor web
+   - https://fastapi.tiangolo.com/
+
+3. **Newspaper3k Documentation**: Documentació de la llibreria per a l'extracció de text de notícies
+   - https://newspaper.readthedocs.io/en/latest/
+
+4. **PyTorch Documentation**: Documentació del framework de deep learning
+   - https://pytorch.org/docs/stable/index.html
+
+5. **Transformers Documentation**: Documentació de la llibreria Transformers de Hugging Face
+   - https://huggingface.co/docs/transformers/index
+
+## Us de la IA en el projecte
+He utilitzat copilot per a crear les funcions per a conectarse al model, tambe per a ajudarme a la flowchart i per a certs aspectes concrets de la documentació.
