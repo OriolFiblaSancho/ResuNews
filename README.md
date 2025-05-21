@@ -37,7 +37,6 @@ flowchart TD
     H -->|No| I[Retorna error]
     H -->|Yes| J[Objecte del model Bart summarizer]
     J -->|Procesa el text| K[Genera Resum]
-    K -->|Retorna| L[Resposta JSON]
     
     style B fill: #145a32 
     style D fill: #145a32 
