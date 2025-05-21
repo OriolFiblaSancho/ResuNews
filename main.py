@@ -39,5 +39,5 @@ async def resumir(request: URLRequest):
     if not text:
         return {"resumen": "No se pudo extraer el contenido de la página."}
 
-    resumen = summarizer(text[:1024], max_length=500, min_length=100, do_sample=False)
+    resumen = summarizer(text[:1024], max_length=500, min_lenght=100 do_sample=False)
     return {"resumen": resumen[0]['summary_text']}

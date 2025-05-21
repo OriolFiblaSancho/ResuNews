@@ -18,6 +18,13 @@ Aplicació per a resumir noticies en base a una url amb el model bart-large-cnn 
 ### Paràmetres del model:
 - **max_length**: Longitud màxima (en tokens) del resum generat. En el nostre cas està configurat a 500 per obtenir resums detallats però concisos.
 - **min_length**: Longitud mínima del resum. Establert a 100 per assegurar que el resum tingui prou contingut.
+
+Els seguents parametres no son recomanables en aquest cas ja que:
+
+1. Les noticies requereixen resumens precisos, no creatius
+2. Busco tenir consistencia en los resumens
+3. El model esta entrenat per a usar noticies de forma objectiva
+
 - **temperature**: Controla la creativitat/aleatorietat en la generació del text.
 - **top_p**: Paràmetre de nucleus sampling que controla la diversitat del text generat, practicament com la temperatura.   
 - **top_k**: Fa referència als tokens de resposta més probables, per exemple un top_k:50 fara que el model utilitze sols els 50 tokens més probables.
@@ -50,3 +57,14 @@ En aquest cas estem treballant desde un model en local ja que l'us d'una API pot
 El model facebook/bart-large-cnn pesa uns 2GB de memoria en disc i te 406M de parametres. Al executarlo per a resumir una noticia utilitza uns 2GB de RAM i utilitza la CPU en lloc de la GPU.
 
 ## Proves realitzades:
+Com he dit anteriorment els parametres de temperatura, top k i top p no son utilitzats en aquest model ja que no volem que tingue creativitat o variabilitat en el text, ja que necessitem resums objectius i reals. Per tant sols he fet proves amb el maxim i minim de tokens
+
+### Max i Min Lenght:
+- Parametre alt (1000,500)
+![alt text](readme_images/lenghtLarge.png)
+
+- Parametre mita (500,100)
+![alt text](readme_images/lenghtMed.png)
+
+- Parametre petit(100, 56)
+![alt text](readme_images/lenghtSmall.png)
