@@ -10,7 +10,6 @@ import os
 
 app = FastAPI()
 
-# Configurar archivos estáticos
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # CORS
@@ -21,7 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Modelo de resumen (puedes cambiar por gpt-neo si quieres hacerlo tú mismo con prompts)
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 class URLRequest(BaseModel):
