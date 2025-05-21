@@ -9,18 +9,18 @@ Aplicació per a resumir noticies en base a una url amb el model bart-large-cnn 
 
 ## Aspectes de programació
 ### Llibreries utilitzades:
-- fastapi
-- uvicorn
-- transformers
-- newspaper3k
-- torch
+- **FastAPI**: Framework de Python per a crear APIs web d'alta velocitat. L'utilitzem per crear el servidor web i gestionar les peticions HTTP.
+- **Uvicorn**: Servidor ASGI d'alt rendiment que permet executar aplicacions FastAPI. És necessari per executar la nostra aplicació web.
+- **Transformers**: Llibreria de Hugging Face que proporciona accés a models pre-entrenats. En aquest cas, l'utilitzem per carregar i utilitzar el model BART per a la generació de resums.
+- **Newspaper3k**: Llibreria especialitzada en l'extracció de contingut d'articles de notícies. Ens permet obtenir el text net d'una URL de notícia.
+- **Torch**: Framework de deep learning necessari per executar els models de Transformers. És requereix per al model BART.
 
-### Parametres:
-- max_lenght
-- min_lenght
-- temperature
-- top_p
-- top_k
+### Paràmetres del model:
+- **max_length**: Longitud màxima (en tokens) del resum generat. En el nostre cas està configurat a 500 per obtenir resums detallats però concisos.
+- **min_length**: Longitud mínima del resum. Establert a 100 per assegurar que el resum tingui prou contingut.
+- **temperature**: Controla la creativitat/aleatorietat en la generació del text.
+- **top_p**: Paràmetre de nucleus sampling que controla la diversitat del text generat.
+- **top_k**: Similar al top_p, limita les opcions de tokens a considerar.
 
 ### FlowChart:
 ```mermaid
