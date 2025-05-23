@@ -16,8 +16,16 @@ Aplicació per a resumir noticies en base a una url amb el model bart-large-cnn 
 5. [Limitacions del model](#limitacions-del-model)
 6. [Aplicacions practiques](#aplicacions-practiques)
 7. [Conclusion](#conclusion)
-8. [Webgrafia](#webgrafia)
-9. [Us de la IA en el projecte](#us-de-la-ia-en-el-projecte)
+8. [Definicions](#definicions)
+   - [IA generativa](#ia-generativa)
+   - [Model](#model)
+   - [Dataset](#dataset)
+   - [Entrenar una IA](#entrenar-una-ia)
+   - [Fer inferència d'una IA](#fer-inferència-duna-ia)
+   - [RAG](#rag-retrieval-augmented-generation)
+   - [Fine-tuning](#fine-tuning)
+9. [Webgrafia](#webgrafia)
+10. [Us de la IA en el projecte](#us-de-la-ia-en-el-projecte)
 
 ## Com s'utilitza
 1. pip install -r requirements.txt
@@ -105,6 +113,29 @@ Clarament la aplicació que te aquest projecte es el de resumir noticies per a g
 
 ## Conclusion
 En aquest projecte he apres a utilitzar diferents models de IA en local amb els seus parametres i ha programar aplicacions en base a aquestos models. Vaig començar utilizant un model de GPT per a fer un expert en formatges, pero vaig voler buscar una aplicació que tinguesa una aplicació practica mes util. Al final he acabat tenint aquest resumidor de noticies que pot tenir aplicacions realment utils.
+
+## Definicions
+
+### IA generativa
+És un tipus d'intel·ligència artificial capaç de crear contingut nou (text, imatges, música, etc) a partir del que ha aprés durant el seu entrenament.
+
+### Model
+És un programa d'ordinador entrenat amb dades per a realitzar una tasca específica.
+
+### Dataset
+És un conjunt de dades estructurades que s'utilitza per entrenar models d'IA. Per exemple, per entrenar un model de reconeixement d'imatges, el dataset podria contenir milers d'imatges etiquetades.
+
+### Entrenar una IA
+És el procés d'alimentar un model amb dades (dataset) perquè aprengui patrons i relacions. Durant l'entrenament, el model ajusta els seus paràmetres interns per millorar la seva precisió en la tasca assignada.
+
+### Fer inferència d'una IA
+És el procés d'utilitzar un model ja entrenat per obtenir resultats amb noves dades. Per exemple, quan el nostre model BART rep una notícia nova i genera un resum, està fent inferència.
+
+### RAG (Retrieval-Augmented Generation)
+És una tècnica que combina la generació de text amb la recuperació d'informació de fonts externes. Permet que els models d'IA accedeixin a informació actualitzada i específica mentre generen respostes.
+
+### Fine-tuning
+És el procés de reentrenar un model pre-entrenat amb dades específiques per adaptar-lo a una tasca concreta. Això permet aprofitar models generals i especialitzar-los per aplicacions específiques.
 
 ## Webgrafia
 1. **Hugging Face - BART-large-CNN**: Documentació oficial del model utilitzat
